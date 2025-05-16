@@ -6,12 +6,13 @@ public class Enemy : MonoBehaviour
     {
         Fire,
         Water,
-        Earth
+        Earth,
+        None
     }
 
     public Element element;
     GameObject enemy;
-    public int health = 4, highDmg = 4, dmg = 2, lowDmg = 1;
+    public int health = 4;
     RectTransform rTransform;
     Vector3 speed = new Vector3(-0.01f, 0, 0);
     void Start()
@@ -29,68 +30,13 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void TakeDamage(Element el)
+    public void TakeDamage(int damage)
     {
-        Debug.Log("Element: " + el);
-        if (element == Element.Fire)
-        {
-            if(el == Element.Water)
-            {
-                health -= highDmg;
-                Debug.Log("High Damage: " + highDmg);
-            }
-            else if (el == Element.Earth)
-            {
-                health -= lowDmg;
-                Debug.Log("Low Damage: " + lowDmg);
-            }
-            else if (el == Element.Fire)
-            {
-                health -= dmg;
-                Debug.Log("Damage: " + dmg);
-            }
-        }
-        else if (element == Element.Water)
-        {
-            if (el == Element.Earth)
-            {
-                health -= highDmg;
-                Debug.Log("High Damage: " + highDmg);
-            }
-            else if (el == Element.Fire)
-            {
-                health -= lowDmg;
-                Debug.Log("Low Damage: " + lowDmg);
-            }
-            else if (el == Element.Water)
-            {
-                health -= dmg;
-                Debug.Log("Damage: " + dmg);
-            }
-        }
-        else if (element == Element.Earth)
-        {
-            if (el == Element.Fire)
-            {
-                health -= highDmg;
-                Debug.Log("High Damage: " + highDmg);
-            }
-            else if (el == Element.Water)
-            {
-                health -= lowDmg;
-                Debug.Log("Low Damage: " + lowDmg);
-
-            }
-            else if (el == Element.Earth)
-            {
-                health -= dmg;
-                Debug.Log("Damage: " + dmg);
-            }
-        }
+        health -= damage;
         if (health <= 0)
         {
             Debug.Log("Enemy Destroyed");
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 }
