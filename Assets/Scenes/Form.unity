@@ -233,8 +233,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.0000095367, y: 724}
-  m_SizeDelta: {x: 937.0273, y: 1022.6167}
+  m_AnchoredPosition: {x: -3, y: 449.25372}
+  m_SizeDelta: {x: 729.1606, y: 796.4086}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &456539113
 MonoBehaviour:
@@ -334,8 +334,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 7.7343, y: -840.5277}
-  m_SizeDelta: {x: 907.25, y: 956.9559}
+  m_AnchoredPosition: {x: 1, y: -568}
+  m_SizeDelta: {x: 649.4198, y: 691.4288}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &461141080
 MonoBehaviour:
@@ -384,8 +384,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -470,8 +470,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000038147, y: 0}
-  m_SizeDelta: {x: 832.7868, y: 879.3855}
+  m_AnchoredPosition: {x: 0.0000066757, y: 93}
+  m_SizeDelta: {x: 742.86, y: 654.77}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &477121529
 MonoBehaviour:
@@ -521,8 +521,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 90
+  m_fontSizeBase: 90
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -604,20 +604,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelAnimator: {fileID: 1925734654}
   formElements:
-  - question: Who are you?
+  - question: Pytanie 1
     answers:
-    - Sigma Boy
-    - Ohio Rizzler
-  - question: Are you gay?
+    - Odpowiedz1
+    - Odpowiedz2
+    - Odpowiedz3
+    - Odpowiedz4
+  - question: Pytanie 2
     answers:
-    - Yes
-    - No
-    - Guess
-  - question: Are you retarded?
-    answers:
-    - No idea
-    - Probably
-    - Definietly
+    - Odpowiedz1
+    - Odpowiedz2
   answersContainer: {fileID: 456539111}
   question: {fileID: 461141080}
   answerPrefab: {fileID: 3686253874625152814, guid: 9fb8b64636ea3b04f8ee3f8d2e4f3485, type: 3}
@@ -776,7 +772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -869,8 +865,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1148, y: 2638.3264}
+  m_AnchoredPosition: {x: -0.0000076294, y: -0.0021362}
+  m_SizeDelta: {x: 800, y: 1688.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1925734652
 MonoBehaviour:
@@ -967,8 +963,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0.000020981, y: 503}
-  m_SizeDelta: {x: 922.7171, y: 353.29248}
+  m_AnchoredPosition: {x: 0.000011444, y: 259.93}
+  m_SizeDelta: {x: 721.4539, y: 219.9324}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &2113699707
 Animator:
@@ -1039,8 +1035,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

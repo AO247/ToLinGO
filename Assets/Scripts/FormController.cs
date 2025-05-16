@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FormController : MonoBehaviour
 {
@@ -62,6 +63,6 @@ public class FormController : MonoBehaviour
 
     private void LoadGame()
     {
-        Debug.Log("Load the game now");
+        SceneManager.LoadScene(0);
     }
 }
