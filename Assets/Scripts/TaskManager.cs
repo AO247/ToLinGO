@@ -138,6 +138,29 @@ public class TaskManager : MonoBehaviour
         rTransform.sizeDelta = newSizeDelta;
     }
 
+    public void ChangeToGold()
+    {
+        foreach (GameObject task in tasks)
+        {
+            if (!task.GetComponent<CheckMark>().isChecked)
+            {
+                if (task.GetComponent<CheckMark>().isElemental)
+                {
+                    task.GetComponent<CheckMark>().number = 1000;
+                    task.GetComponent<CheckMark>().numberText.text = "1k";
+                }
+                else
+                {
+                    task.GetComponent<CheckMark>().number = 100;
+                    task.GetComponent<CheckMark>().numberText.text = "100";
+                }
+                task.GetComponent<CheckMark>().fire.SetActive(false);
+                task.GetComponent<CheckMark>().water.SetActive(false);
+                task.GetComponent<CheckMark>().earth.SetActive(false);
+                task.GetComponent<CheckMark>().none.SetActive(true);
+            }
+        }
+    }
 
     void GenerateTasks()
     {

@@ -16,12 +16,13 @@ public class CheckMark : MonoBehaviour
     public bool isChecked = false;
     public bool isElemental = true;
     public TextMeshProUGUI numberText;
-    int number;
+    public int number;
     TaskManager taskManager;
     public int highDmg = 4, dmg = 2, lowDmg = 1;
     public GameObject fire;
     public GameObject water;
     public GameObject earth;
+    public GameObject none;
     void Start()
     {
         
@@ -65,52 +66,58 @@ public class CheckMark : MonoBehaviour
 
         taskName.SetText(name);
 
-
-        if (enemy.element == Enemy.Element.Fire)
+        if (el != Enemy.Element.None)
         {
-            if (el == Enemy.Element.Water)
+            if (enemy.element == Enemy.Element.Fire)
             {
-                number = highDmg;
+                if (el == Enemy.Element.Water)
+                {
+                    number = highDmg;
+                }
+                else if (el == Enemy.Element.Earth)
+                {
+                    number = lowDmg;
+                }
+                else if (el == Enemy.Element.Fire)
+                {
+                    number = dmg;
+                }
             }
-            else if (el == Enemy.Element.Earth)
+            else if (enemy.element == Enemy.Element.Water)
             {
-                number = lowDmg;
+                if (el == Enemy.Element.Earth)
+                {
+                    number = highDmg;
+                }
+                else if (el == Enemy.Element.Fire)
+                {
+                    number = lowDmg;
+                }
+                else if (el == Enemy.Element.Water)
+                {
+                    number = dmg;
+                }
             }
-            else if (el == Enemy.Element.Fire)
+            else if (enemy.element == Enemy.Element.Earth)
             {
-                number = dmg;
+                if (el == Enemy.Element.Fire)
+                {
+                    number = highDmg;
+                }
+                else if (el == Enemy.Element.Water)
+                {
+                    number = lowDmg;
+
+                }
+                else if (el == Enemy.Element.Earth)
+                {
+                    number = dmg;
+                }
             }
         }
-        else if (enemy.element == Enemy.Element.Water)
+        else
         {
-            if (el == Enemy.Element.Earth)
-            {
-                number = highDmg;
-            }
-            else if (el == Enemy.Element.Fire)
-            {
-                number = lowDmg;
-            }
-            else if (el == Enemy.Element.Water)
-            {
-                number = dmg;
-            }
-        }
-        else if (enemy.element == Enemy.Element.Earth)
-        {
-            if (el == Enemy.Element.Fire)
-            {
-                number = highDmg;
-            }
-            else if (el == Enemy.Element.Water)
-            {
-                number = lowDmg;
-
-            }
-            else if (el == Enemy.Element.Earth)
-            {
-                number = dmg;
-            }
+            number = 100;
         }
         numberText.SetText(number.ToString());
     }

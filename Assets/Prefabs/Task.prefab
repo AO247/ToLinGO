@@ -104,12 +104,14 @@ MonoBehaviour:
   isChecked: 0
   isElemental: 1
   numberText: {fileID: 4422211744629506215}
+  number: 0
   highDmg: 4
   dmg: 2
   lowDmg: 1
   fire: {fileID: 4846671123611230283}
   water: {fileID: 8361452471344881226}
   earth: {fileID: 7342497600946393267}
+  none: {fileID: 2498765056033931064}
 --- !u!1 &2498765056033931064
 GameObject:
   m_ObjectHideFlags: 0

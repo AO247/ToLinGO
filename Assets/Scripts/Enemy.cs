@@ -14,10 +14,12 @@ public class Enemy : MonoBehaviour
     GameObject enemy;
     public int health = 4;
     RectTransform rTransform;
+    TaskManager taskManager;
     Vector3 speed = new Vector3(-0.01f, 0, 0);
     void Start()
     {
         rTransform = GetComponent<RectTransform>();
+        taskManager = GameObject.FindGameObjectWithTag("TaskManager").GetComponent<TaskManager>();
     }
     
     // Update is called once per frame
@@ -26,7 +28,7 @@ public class Enemy : MonoBehaviour
         rTransform.position += speed;
         if(transform.position.x < -350)
         {
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 
@@ -35,7 +37,7 @@ public class Enemy : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
-            Debug.Log("Enemy Destroyed");
+            taskManager.ChangeToGold();
             Destroy(gameObject);
         }
     }
