@@ -9,6 +9,7 @@ public class TaskManager : MonoBehaviour
     public GameObject content;
     public GameObject task;
     public TextMeshProUGUI inputText;
+    int userTaskCount = 0;
     void Start()
     {
     }
@@ -51,7 +52,15 @@ public class TaskManager : MonoBehaviour
     {
         string taskName = inputText.text;
         Enemy.Element el = Enemy.Element.None;
-
+        if (userTaskCount > 2)
+        {
+            el = Enemy.Element.None;
+        }
+        else
+        {
+            el = Enemy.Element.Gold;
+        }
+        userTaskCount++;
         GameObject newTask = Instantiate(task, content.transform);
         newTask.transform.SetParent(content.transform);
         newTask.transform.SetAsFirstSibling();
@@ -131,6 +140,7 @@ public class TaskManager : MonoBehaviour
             Destroy(task);
         }
         tasks.Clear();
+        userTaskCount = 0;
         RectTransform rTransform = content.GetComponent<RectTransform>();
         Vector2 newSizeDelta = rTransform.sizeDelta;
         newSizeDelta.y = 0;
@@ -147,16 +157,12 @@ public class TaskManager : MonoBehaviour
                 {
                     task.GetComponent<CheckMark>().number = 1000;
                     task.GetComponent<CheckMark>().numberText.text = "1k";
+                    task.GetComponent<CheckMark>().fire.SetActive(false);
+                    task.GetComponent<CheckMark>().water.SetActive(false);
+                    task.GetComponent<CheckMark>().earth.SetActive(false);
+                    task.GetComponent<CheckMark>().none.SetActive(false);
+                    task.GetComponent<CheckMark>().gold.SetActive(true);
                 }
-                else
-                {
-                    task.GetComponent<CheckMark>().number = 100;
-                    task.GetComponent<CheckMark>().numberText.text = "100";
-                }
-                task.GetComponent<CheckMark>().fire.SetActive(false);
-                task.GetComponent<CheckMark>().water.SetActive(false);
-                task.GetComponent<CheckMark>().earth.SetActive(false);
-                task.GetComponent<CheckMark>().none.SetActive(true);
             }
         }
     }

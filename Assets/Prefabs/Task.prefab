@@ -112,6 +112,7 @@ MonoBehaviour:
   fire: {fileID: 4846671123611230283}
   water: {fileID: 8361452471344881226}
   earth: {fileID: 7342497600946393267}
+  gold: {fileID: 7265619333583354012}
   none: {fileID: 2498765056033931064}
 --- !u!1 &74196457501038482
 GameObject:

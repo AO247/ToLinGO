@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
         Fire,
         Water,
         Earth,
+        Gold,
         None
     }
 
