@@ -18,18 +18,18 @@ public class Menus : MonoBehaviour
     public void UpdateMoney(float amount)
     {
         money += amount;
-        moneyText.text = "Money: " + money.ToString("F2");
+        moneyText.text =  money.ToString("F2");
     }
 
     public void UpdateStrike()
     {
         strike++;
-        strikeText.text = "Strikes: " + strike.ToString();
+        strikeText.text = strike.ToString();
     }
 
     public void ResetStrike()
     {
         strike = 0;
-        strikeText.text = "Strikes: " + strike.ToString();
+        strikeText.text =  strike.ToString();
     }
 }
