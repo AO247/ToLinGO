@@ -24,6 +24,9 @@ public class Enemy : MonoBehaviour
     public GameObject skeleton;
     float travelTime = 40.0f;
     Vector3 speed = new Vector3(-0.01f, 0, 0);
+    float basic;
+    float jiggle = 3.0f;
+    float jiggleBoundary = 10.0f;
     void Start()
     {
         rTransform = GetComponent<RectTransform>();
@@ -33,7 +36,7 @@ public class Enemy : MonoBehaviour
         float n = 538;
         float speedX = n / travelTime;
         speed = new Vector3(-speedX, 0, 0);
-
+        basic = rTransform.localPosition.y;
         HealthBarUI.SetMaxHealth(maxHealth);
     }
     
@@ -41,7 +44,8 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         rTransform.localPosition += speed * Time.deltaTime;
-        if(transform.localPosition.x < -350)
+        rTransform.localPosition = new Vector3(rTransform.localPosition.x, basic + Mathf.Sin(Time.time * jiggle) * jiggleBoundary, 0);
+        if (transform.localPosition.x < -350)
         {
             Destroy(gameObject);
             menus.ResetStrike();

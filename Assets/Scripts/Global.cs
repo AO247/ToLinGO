@@ -11,7 +11,7 @@ public class Global : MonoBehaviour
 
     float pRandom = 0;
     float pRandomElement = 0;
-    public int dayCount;
+    int dayCount;
     public float dayTime = 40f;
     float finishTimeBase = 40.0f;
     public float finishTime = 40.0f;
