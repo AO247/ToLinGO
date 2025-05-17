@@ -94,12 +94,12 @@ public class Global : MonoBehaviour
         if (randomElement == 0)
         {
             enemy.element = Enemy.Element.Fire;
-            elementColor = Color.red;
+            elementColor = new Color(1f, 0.6f, 0.6f);
         }
         else if (randomElement == 1)
         {
             enemy.element = Enemy.Element.Water;
-            elementColor = Color.blue;
+            elementColor = new Color(0.5f, 0.8f, 1f);
         }
         else if (randomElement == 2)
         {
