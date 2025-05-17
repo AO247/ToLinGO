@@ -10,8 +10,23 @@ public class TaskManager : MonoBehaviour
     public GameObject task;
     public TextMeshProUGUI inputText;
     int userTaskCount = 0;
+
+    string[] fireTasks = new string[3];
+    string[] waterTasks = new string[3];
+    string[] earthTasks = new string[3];
     void Start()
     {
+        fireTasks[0] = "Zrób 5 pompek";
+        fireTasks[1] = "Zrób 10 przysiadów";
+        fireTasks[2] = "Zrób 20 brzuszków";
+
+        waterTasks[0] = "Uœmiechnij siê do kogoœ";
+        waterTasks[1] = "Pog³aszcz Filipa";
+        waterTasks[2] = "Zadzwoñ do znajomego";
+
+        earthTasks[0] = "Zrób 5 oddechów";
+        earthTasks[1] = "Ogl¹daj krajobraz za oknem przez min";
+        earthTasks[2] = "Przeczytaj 10 stron z ksi¹¿ki";
     }
 
     // Update is called once per frame
@@ -20,7 +35,7 @@ public class TaskManager : MonoBehaviour
         TasksUpdate();
     }
 
-    public void AddTask(string element = "None", string taskName = "Filip Do Wiêzienia")
+    public void AddTask(string element = "Fire", string taskName = "Filip Do Wiêzienia")
     {
         Enemy.Element el = Enemy.Element.None;
         if (element == "Fire")
@@ -35,7 +50,7 @@ public class TaskManager : MonoBehaviour
         {
             el = Enemy.Element.Earth;
         }
-
+        Debug.Log("Adding task: " + taskName);
         GameObject newTask = Instantiate(task, content.transform);
         newTask.transform.SetParent(content.transform);
         newTask.transform.localScale = new Vector3(1, 1, 1);
@@ -89,7 +104,7 @@ public class TaskManager : MonoBehaviour
         {
             if (!task.GetComponent<CheckMark>().isChecked)
             {
-                if(!task.GetComponent<CheckMark>().isElemental)
+                if (!task.GetComponent<CheckMark>().isElemental)
                 {
                     task.transform.SetAsFirstSibling();
                     flag = true;
@@ -127,7 +142,7 @@ public class TaskManager : MonoBehaviour
                 }
             }
         }
-        if(!flag)
+        if (!flag)
         {
             GameObject.FindGameObjectWithTag("Global").GetComponent<Global>().dayTime = GameObject.FindGameObjectWithTag("Global").GetComponent<Global>().finishTime;
         }
@@ -169,13 +184,35 @@ public class TaskManager : MonoBehaviour
 
     public void GenerateTasks()
     {
+        int rand = Random.Range(0, fireTasks.Length);
+        AddTask("Fire", fireTasks[rand]);
+        int pRand = rand;
+        while (rand == pRand)
+        {
+            rand = Random.Range(0, fireTasks.Length);
+        }
+        AddTask("Fire", fireTasks[rand]);
 
-        AddTask("Fire", "Zrób 5 pompek");
-        AddTask("Fire", "Zrób 10 przysiadów");
-        AddTask("Water", "Uœmiechnij siê do kogoœ");
-        AddTask("Water", "Pog³aszcz Filipa");
-        AddTask("Earth", "Zrób 5 oddechów");
-        AddTask("Earth", "Ogl¹daj krajobraz za oknem przez min");
+        rand = Random.Range(0, waterTasks.Length);
+        AddTask("Water", waterTasks[rand]);
+        pRand = rand;
+        while (rand == pRand)
+        {
+            rand = Random.Range(0, waterTasks.Length);
+        }
+        AddTask("Water", waterTasks[rand]);
+
+
+        rand = Random.Range(0, earthTasks.Length);
+        AddTask("Earth", earthTasks[rand]);
+        pRand = rand;
+        while (rand == pRand)
+        {
+            rand = Random.Range(0, earthTasks.Length);
+        }
+        AddTask("Earth", earthTasks[rand]);
+
     }
+
 
 }

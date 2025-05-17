@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
         taskManager = GameObject.FindGameObjectWithTag("TaskManager").GetComponent<TaskManager>();
         menus = GameObject.FindGameObjectWithTag("Menus").GetComponent<Menus>();
         travelTime = GameObject.FindGameObjectWithTag("Global").GetComponent<Global>().finishTime;
-        float n = 538 + 350;
+        float n = 538;
         float speedX = n / travelTime;
         speed = new Vector3(-speedX, 0, 0);
 

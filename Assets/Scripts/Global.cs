@@ -109,9 +109,6 @@ public class Global : MonoBehaviour
 
         SetEnemyColor(activeEnemy, elementColor);
 
-        Debug.Log(random);
-        Debug.Log(randomElement);
-
         taskManager.GenerateTasks();
     }
 
