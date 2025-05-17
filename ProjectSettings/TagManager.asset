@@ -8,8 +8,7 @@ TagManager:
   - Task
   - TaskManager
   - Menus
-  - Hat
-  - Costume
+  - Global
   layers:
   - Default
   - TransparentFX

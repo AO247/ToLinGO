@@ -7,6 +7,7 @@ public class CheckMark : MonoBehaviour
 {
 
     GameObject checkMark;
+    Menus menus;
     public Enemy.Element element;
     public Enemy enemy;
     public TextMeshProUGUI taskName;
@@ -25,7 +26,7 @@ public class CheckMark : MonoBehaviour
     public GameObject none;
     void Start()
     {
-        
+        menus = GameObject.FindGameObjectWithTag("Menus").GetComponent<Menus>();
     }
     private void Awake()
     {
@@ -44,13 +45,14 @@ public class CheckMark : MonoBehaviour
             taskManager.SetTaskLast(gameObject);
             isChecked = true;
             toggle.interactable = false;
+            enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>();
             if (enemy && number < 10) 
             {
                 enemy.TakeDamage(number);
             }
             else
             {
-
+                menus.UpdateMoney(number);
             }
         }
 
