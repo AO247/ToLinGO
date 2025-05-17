@@ -31,7 +31,9 @@ public class CheckMark : MonoBehaviour
     }
     private void Awake()
     {
-        enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>();
+        var enemyObj = GameObject.FindGameObjectWithTag("Enemy");
+        if (enemyObj != null)
+            enemy = enemyObj.GetComponent<Enemy>();
         taskManager = GameObject.FindGameObjectWithTag("TaskManager").GetComponent<TaskManager>();
     }
 
@@ -46,7 +48,9 @@ public class CheckMark : MonoBehaviour
             taskManager.SetTaskLast(gameObject);
             isChecked = true;
             toggle.interactable = false;
-            enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>();
+            var enemyObj = GameObject.FindGameObjectWithTag("Enemy");
+            if (enemyObj != null)
+                enemy = enemyObj.GetComponent<Enemy>();
             if (enemy && number < 10) 
             {
                 enemy.TakeDamage(number);
