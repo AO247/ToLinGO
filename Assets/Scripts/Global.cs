@@ -11,7 +11,7 @@ public class Global : MonoBehaviour
 
     float pRandom = 0;
     float pRandomElement = 0;
-    int dayCount;
+    public int dayCount;
     public float dayTime = 40f;
     float finishTimeBase = 40.0f;
     public float finishTime = 40.0f;
@@ -105,6 +105,16 @@ public class Global : MonoBehaviour
         {
             enemy.element = Enemy.Element.Earth;
             elementColor = Color.green;
+        }
+        if(dayCount == 6)
+        {
+            enemy.health = 8;
+            enemy.maxHealth = 8;
+        }
+        else
+        {
+            enemy.health = 4;
+            enemy.maxHealth = 4;
         }
 
         SetEnemyColor(activeEnemy, elementColor);

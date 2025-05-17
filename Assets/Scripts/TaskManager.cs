@@ -11,25 +11,36 @@ public class TaskManager : MonoBehaviour
     public TextMeshProUGUI inputText;
     int userTaskCount = 0;
 
-    string[] fireTasks = new string[3];
-    string[] waterTasks = new string[3];
-    string[] earthTasks = new string[3];
+    string[] fireTasks = new string[7];
+    string[] waterTasks = new string[5];
+    string[] earthTasks = new string[5];
     void Start()
     {
-        fireTasks[0] = "Zrób 5 pompek";
-        fireTasks[1] = "Zrób 10 przysiadów";
-        fireTasks[2] = "Zrób 20 brzuszków";
+        fireTasks[0] = "Do 5 pushups";
+        fireTasks[1] = "Do 10 squats";
+        fireTasks[2] = "Do 20 crounches";
+        fireTasks[3] = "Travel 1km";
+        fireTasks[4] = "Hold plank for 30 s";
+        fireTasks[5] = "Climb stairs for 2 min";
+        fireTasks[6] = "Perform 10 lunges on each leg";
 
-        waterTasks[0] = "Uœmiechnij siê do kogoœ";
-        waterTasks[1] = "Pog³aszcz Filipa";
-        waterTasks[2] = "Zadzwoñ do znajomego";
 
-        earthTasks[0] = "Zrób 5 oddechów";
-        earthTasks[1] = "Ogl¹daj krajobraz za oknem przez min";
-        earthTasks[2] = "Przeczytaj 10 stron z ksi¹¿ki";
+        waterTasks[0] = "Smile to someone";
+        waterTasks[1] = "Call to your friend";
+        waterTasks[2] = "Give a compliment to someone";
+        waterTasks[3] = "Meet up with friend";
+        waterTasks[4] = "Start a small talk with a coworker";
+
+
+        earthTasks[0] = "Take 5 deep breaths";
+        earthTasks[1] = "Read 5 pages";
+        earthTasks[2] = "Take a walk in nature";
+        earthTasks[3] = "Meditate for 5 min";
+        earthTasks[4] = "Watch something";
+
+
     }
 
-    // Update is called once per frame
     void Update()
     {
         TasksUpdate();
