@@ -108,6 +108,7 @@ public class Global : MonoBehaviour
         }
         if(dayCount == 6)
         {
+            enemy.crown.SetActive(true);
             enemy.health = 8;
             enemy.maxHealth = 8;
         }
