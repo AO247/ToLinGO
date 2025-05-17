@@ -10,10 +10,12 @@ public class Enemy : MonoBehaviour
         None
     }
 
+    public HealthBarUI HealthBarUI;
     Menus menus;
     public Element element;
     GameObject enemy;
     public int health = 4;
+    public int maxHealth = 4;
     RectTransform rTransform;
     TaskManager taskManager;
     public GameObject slime;
@@ -31,6 +33,7 @@ public class Enemy : MonoBehaviour
         float speedX = n / travelTime;
         speed = new Vector3(-speedX, 0, 0);
 
+        HealthBarUI.SetMaxHealth(maxHealth);
     }
     
     // Update is called once per frame
@@ -47,6 +50,9 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+
+        HealthBarUI.SetHealth(health);
+
         if (health <= 0)
         {
             taskManager.ChangeToGold();
