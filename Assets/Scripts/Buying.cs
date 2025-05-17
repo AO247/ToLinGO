@@ -47,24 +47,33 @@ public class Buying : MonoBehaviour
         {
             if (player.GetComponent<ChangePlayerOutfit>().isEquippedHat)
             {
+                Debug.Log("Removing hat");
+                priceText.text = "Equip"; // Assuming productImage has the hat sprite
                 player.GetComponent<ChangePlayerOutfit>().isEquippedHat = false;
-                player.GetComponent<ChangePlayerOutfit>().ChangeHat(null); // Assuming productImage has the hat sprite
+                player.GetComponent<ChangePlayerOutfit>().ChangeHat(null);
+                Debug.Log("Hat removed");
+                // Assuming productImage has the hat sprite
             }
             else
-                player.GetComponent<ChangePlayerOutfit>().isEquippedHat = true;
-            player.GetComponent<ChangePlayerOutfit>().ChangeHat(productImage); // Assuming productImage has the hat sprite
+            {
+            player.GetComponent<ChangePlayerOutfit>().isEquippedHat = true;
+            player.GetComponent<ChangePlayerOutfit>().ChangeHat(productImage);
+            priceText.text = "Equipped"; // Assuming productImage has the hat sprite
+            }
         }
         else if (isBought && !isHat)
         {
             if (player.GetComponent<ChangePlayerOutfit>().isEquippedCostume)
             {
                 player.GetComponent<ChangePlayerOutfit>().isEquippedCostume = false;
-                player.GetComponent<ChangePlayerOutfit>().ChangeCostume(null); // Assuming productImage has the hat sprite
+                player.GetComponent<ChangePlayerOutfit>().ChangeCostume(null);
+                priceText.text = "Equip"; // Assuming productImage has the hat sprite
             }
             else
             {
                 player.GetComponent<ChangePlayerOutfit>().isEquippedCostume = true;
-                player.GetComponent<ChangePlayerOutfit>().ChangeCostume(productImage); // Assuming productImage has the hat sprite
+                player.GetComponent<ChangePlayerOutfit>().ChangeCostume(productImage);
+                priceText.text = "Equipped"; // Assuming productImage has the hat sprite
             }
         }
     }
