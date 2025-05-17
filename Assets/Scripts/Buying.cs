@@ -10,7 +10,7 @@ public class Buying : MonoBehaviour
     public Button buyButton;
     public bool isBought = false;
     public bool isHat = false;
-    public Image productImage;
+    public Sprite productImage;
     public GameObject player; // Image component to show the product
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -63,18 +63,18 @@ public class Buying : MonoBehaviour
         }
         else if (isBought && !isHat)
         {
-            if (player.GetComponent<ChangePlayerOutfit>().isEquippedCostume)
-            {
-                player.GetComponent<ChangePlayerOutfit>().isEquippedCostume = false;
-                player.GetComponent<ChangePlayerOutfit>().ChangeCostume(null);
-                priceText.text = "Equip"; // Assuming productImage has the hat sprite
-            }
-            else
-            {
+            // if (player.GetComponent<ChangePlayerOutfit>().isEquippedCostume)
+            // {
+            //     player.GetComponent<ChangePlayerOutfit>().isEquippedCostume = false;
+            //     player.GetComponent<ChangePlayerOutfit>().ChangeCostume(null);
+            //     priceText.text = "Equip"; // Assuming productImage has the hat sprite
+            // }
+            // else
+            // {
                 player.GetComponent<ChangePlayerOutfit>().isEquippedCostume = true;
                 player.GetComponent<ChangePlayerOutfit>().ChangeCostume(productImage);
                 priceText.text = "Equipped"; // Assuming productImage has the hat sprite
-            }
+            //}
         }
     }
 }

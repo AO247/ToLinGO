@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 1caad25e41e2b0b40a6aa2bcc905130e
+guid: 9d558d9f81a20ef409b80bd1b148f769
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3512939373843561078
-    second: Clothes_3_0
+      213: 9091364994525629876
+    second: Mouth_6_0
+  - first:
+      213: -7080508362178466871
+    second: Mouth_6_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Clothes_3_0
+      name: Mouth_6_0
       rect:
         serializedVersion: 2
-        x: 75
-        y: 43
-        width: 575
-        height: 314
+        x: 260
+        y: 247
+        width: 35
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +131,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 67abd678fb770c030800000000000000
-      internalID: 3512939373843561078
+      spriteID: 4bd0f1e5b440b2e70800000000000000
+      internalID: 9091364994525629876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mouth_6_1
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 246
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cb6b23a82bfcbd90800000000000000
+      internalID: -7080508362178466871
       vertices: []
       indices: 
       edges: []
@@ -148,7 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Clothes_3_0: 3512939373843561078
+      Mouth_6_0: 9091364994525629876
+      Mouth_6_1: -7080508362178466871
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

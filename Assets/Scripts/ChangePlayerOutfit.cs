@@ -4,51 +4,52 @@ using UnityEngine.UI;
 
 public class ChangePlayerOutfit : MonoBehaviour
 {
-    public Image playerCostume;
-    public Image playerHat; // Image component to show the product
-    public Image playerModel;
-    public Image playerFace;
+    public GameObject playerCostume;
+    public GameObject playerHat; // Image component to show the product
+    public GameObject playerModel;
+    public GameObject playerFace;
     public bool isEquippedHat = false;
     public bool isEquippedCostume = false;
 
-    public void ChangeCostume(Image newCostume)
+    public void ChangeCostume(Sprite newCostume)
     {
         if (newCostume == null)
         {
-            playerCostume.gameObject.SetActive(false);
-            playerCostume.sprite = null; // Remove the costume sprite
+            playerCostume.GameObject().SetActive(false);
+            //playerCostume = null; // Remove the costume sprite
         }
         else
         {
-            playerCostume.gameObject.SetActive(true); // Show the costume sprite
-            playerCostume.sprite = newCostume.sprite;
+             // Show the costume sprite
+            playerCostume.GetComponent<SpriteRenderer>().sprite = newCostume;
+            playerCostume.GameObject().SetActive(true);
             Debug.Log("Costume changed to: " + isEquippedCostume);
         } // Change the costume sprite
     }
 
-    public void ChangeHat(Image newHat)
+    public void ChangeHat(Sprite newHat)
     {
         if (newHat == null)
         {
             playerHat.GameObject().SetActive(false);
-            playerHat.sprite = null; // Remove the hat sprite
+            //playerHat = null; // Remove the hat sprite
         }
         else
         {
-            playerHat.GameObject().SetActive(true); // Show the hat sprite
-            playerHat.sprite = newHat.sprite;
+            playerHat.GetComponent<SpriteRenderer>().sprite = newHat;
+            playerHat.GameObject().SetActive(true);
             Debug.Log("Hat changed to: " + isEquippedHat);
         }
     }
 
-    public void ChangeModel(Image newModel)
+    public void ChangeModel(Sprite newModel)
     {
-        playerModel.sprite = newModel.sprite; // Change the model sprite
+        playerModel.GetComponent<SpriteRenderer>().sprite = newModel; // Change the model sprite
     }
 
-    public void ChangeFace(Image newFace)
+    public void ChangeFace(Sprite newFace)
     {
-        playerFace.sprite = newFace.sprite; // Change the face sprite
+        playerFace.GetComponent<SpriteRenderer>().sprite = newFace; // Change the face sprite
     }
 
 }
