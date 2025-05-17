@@ -63,6 +63,6 @@ public class FormController : MonoBehaviour
 
     private void LoadGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }

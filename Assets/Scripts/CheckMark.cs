@@ -1,5 +1,4 @@
 using TMPro;
-using Unity.Android.Gradle;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -137,9 +136,13 @@ public class CheckMark : MonoBehaviour
                 }
             }
         }
-        else
+        else if (el == Enemy.Element.Gold)
         {
             number = 100;
+        }
+        else if (el == Enemy.Element.None)
+        {
+            number = 0;
         }
         numberText.SetText(number.ToString());
     }
