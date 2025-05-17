@@ -15,6 +15,9 @@ public class Enemy : MonoBehaviour
     public int health = 4;
     RectTransform rTransform;
     TaskManager taskManager;
+    public GameObject slime;
+    public GameObject goblin;
+    public GameObject skeleton;
     Vector3 speed = new Vector3(-0.01f, 0, 0);
     void Start()
     {

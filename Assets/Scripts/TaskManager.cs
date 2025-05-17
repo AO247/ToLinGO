@@ -11,7 +11,6 @@ public class TaskManager : MonoBehaviour
     public TextMeshProUGUI inputText;
     void Start()
     {
-        GenerateTasks();
     }
 
     // Update is called once per frame
@@ -162,8 +161,9 @@ public class TaskManager : MonoBehaviour
         }
     }
 
-    void GenerateTasks()
+    public void GenerateTasks()
     {
+
         AddTask("Fire", "Zrób 5 pompek");
         AddTask("Fire", "Zrób 10 przysiadów");
         AddTask("Water", "Uœmiechnij siê do kogoœ");
