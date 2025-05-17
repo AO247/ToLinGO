@@ -39,12 +39,19 @@ public class CheckMark : MonoBehaviour
         if (toggle.isOn && !damaged)
         {
             damaged = true;
-            enemy.TakeDamage(number);
             cover.SetActive(true);
             taskName.fontStyle = FontStyles.Strikethrough;
             taskManager.SetTaskLast(gameObject);
             isChecked = true;
             toggle.interactable = false;
+            if (enemy && number < 10) 
+            {
+                enemy.TakeDamage(number);
+            }
+            else
+            {
+
+            }
         }
 
     }
