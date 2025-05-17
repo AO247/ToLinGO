@@ -9,7 +9,8 @@ public class Global : MonoBehaviour
     public GameObject enemyPrefab;
     public TaskManager taskManager;
 
-
+    float pRandom = 0;
+    float pRandomElement = 0;
     void Start()
     {
         RandomEnemy();
@@ -28,9 +29,19 @@ public class Global : MonoBehaviour
 
     void RandomEnemy()
     {
-        int random = Random.Range(0, 3);
-        int randomElement = Random.Range(0, 3);
+        int random = 0, randomElement = 0;
+        do
+        {
+            random = Random.Range(0, 3);
+        } while (random == pRandom);
 
+        do
+        {
+            randomElement = Random.Range(0, 3);
+        } while (randomElement == pRandomElement);
+
+        pRandom = random;
+        pRandomElement = randomElement;
         GameObject newEnemy = Instantiate(enemyPrefab, Vector3.zero, Quaternion.identity);
         newEnemy.transform.SetParent(top.transform);
         newEnemy.transform.localPosition = new Vector3(538, -512, 0);

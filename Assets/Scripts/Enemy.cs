@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
         None
     }
 
+    Menus menus;
     public Element element;
     GameObject enemy;
     public int health = 4;
@@ -23,15 +24,17 @@ public class Enemy : MonoBehaviour
     {
         rTransform = GetComponent<RectTransform>();
         taskManager = GameObject.FindGameObjectWithTag("TaskManager").GetComponent<TaskManager>();
+        menus = GameObject.FindGameObjectWithTag("Menus").GetComponent<Menus>();
     }
     
     // Update is called once per frame
     void Update()
     {
         rTransform.position += speed;
-        if(transform.position.x < -350)
+        if(transform.localPosition.x < -350)
         {
             Destroy(gameObject);
+            menus.ResetStrike();
         }
     }
 
@@ -42,6 +45,7 @@ public class Enemy : MonoBehaviour
         {
             taskManager.ChangeToGold();
             Destroy(gameObject);
+            menus.UpdateStrike();
         }
     }
 }
