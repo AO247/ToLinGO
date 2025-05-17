@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Modele_szkielet_0: 4617965258539178138
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
