@@ -23,6 +23,7 @@ public class CheckMark : MonoBehaviour
     public GameObject fire;
     public GameObject water;
     public GameObject earth;
+    public GameObject gold;
     public GameObject none;
     void Start()
     {
@@ -72,10 +73,18 @@ public class CheckMark : MonoBehaviour
         {
             earth.SetActive(true);
         }
+        else if (el == Enemy.Element.None)
+        {
+            none.SetActive(true);
+        }
+        else if (el == Enemy.Element.Gold)
+        {
+            gold.SetActive(true);
+        }
 
         taskName.SetText(name);
 
-        if (el != Enemy.Element.None)
+        if (el != Enemy.Element.None && el != Enemy.Element.Gold)
         {
             if (enemy.element == Enemy.Element.Fire)
             {
