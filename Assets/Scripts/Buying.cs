@@ -10,7 +10,7 @@ public class Buying : MonoBehaviour
     public Button buyButton;
     public bool isBought = false;
     public bool isHat = false;
-    public Sprite productImage;
+    public Image productImage;
     public GameObject player; // Image component to show the product
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,8 +33,9 @@ public class Buying : MonoBehaviour
             }
             else if (!isHat)
             {
-                player.GetComponent<ChangePlayerOutfit>().isEquippedCostume = true;
-                player.GetComponent<ChangePlayerOutfit>().ChangeCostume(productImage); // Assuming productImage has the hat sprite
+
+                player.GetComponent<ChangePlayerOutfit>().ChangeCostume(productImage);
+                player.GetComponent<ChangePlayerOutfit>().isEquippedCostume = true; // Assuming productImage has the hat sprite
             }
             menus.UpdateMoney(-price);
             priceText.text = "Equipped"; // Change button text to "Equipped"
@@ -56,8 +57,9 @@ public class Buying : MonoBehaviour
             }
             else
             {
-            player.GetComponent<ChangePlayerOutfit>().isEquippedHat = true;
+            
             player.GetComponent<ChangePlayerOutfit>().ChangeHat(productImage);
+            player.GetComponent<ChangePlayerOutfit>().isEquippedHat = true;
             priceText.text = "Equipped"; // Assuming productImage has the hat sprite
             }
         }
@@ -71,8 +73,9 @@ public class Buying : MonoBehaviour
             // }
             // else
             // {
-                player.GetComponent<ChangePlayerOutfit>().isEquippedCostume = true;
+                
                 player.GetComponent<ChangePlayerOutfit>().ChangeCostume(productImage);
+                player.GetComponent<ChangePlayerOutfit>().isEquippedCostume = true;
                 priceText.text = "Equipped"; // Assuming productImage has the hat sprite
             //}
         }
