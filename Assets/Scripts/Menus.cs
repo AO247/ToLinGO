@@ -1,31 +1,35 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Menus : MonoBehaviour
 {
-    public static Menus instance { get; private set; }
-    public float money;
+    public float money = 200f; // Przykładowa wartość początkowa
+    public TextMeshProUGUI moneyText;
+    public int strike = 0;
+    public TextMeshProUGUI strikeText;
 
-   void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject); // Zachowuje obiekt między scenami
-        }
-        else
-        {
-            Destroy(gameObject); // Usuwa duplikaty
-        }
-    }
     void Start()
     {
-        
+        ResetStrike();
+        UpdateMoney(0);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateMoney(float amount)
     {
-        
+        money += amount;
+        moneyText.text = "Money: " + money.ToString("F2");
+    }
+
+    public void UpdateStrike()
+    {
+        strike++;
+        strikeText.text = "Strikes: " + strike.ToString();
+    }
+
+    public void ResetStrike()
+    {
+        strike = 0;
+        strikeText.text = "Strikes: " + strike.ToString();
     }
 }
