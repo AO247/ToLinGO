@@ -324,7 +324,7 @@ MonoBehaviour:
   goblin: {fileID: 462550055325656446}
   skeleton: {fileID: 8198448527862892994}
   crown: {fileID: 8876939200688877356}
-  textBar: {fileID: 0}
+  textBar: {fileID: 8848667255863765674}
 --- !u!1 &3430473129615841088
 GameObject:
   m_ObjectHideFlags: 0
