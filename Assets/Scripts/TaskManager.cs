@@ -120,7 +120,7 @@ public class TaskManager : MonoBehaviour
         }
         if(!flag)
         {
-            ClearTasks();
+            GameObject.FindGameObjectWithTag("Global").GetComponent<Global>().dayTime = GameObject.FindGameObjectWithTag("Global").GetComponent<Global>().finishTime;
         }
     }
 

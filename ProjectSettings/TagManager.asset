@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Task
   - TaskManager
+  - Menus
+  - Global
   layers:
   - Default
   - TransparentFX

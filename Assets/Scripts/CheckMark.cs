@@ -45,6 +45,7 @@ public class CheckMark : MonoBehaviour
             taskManager.SetTaskLast(gameObject);
             isChecked = true;
             toggle.interactable = false;
+            enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>();
             if (enemy && number < 10) 
             {
                 enemy.TakeDamage(number);

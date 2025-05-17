@@ -11,19 +11,43 @@ public class Global : MonoBehaviour
 
     float pRandom = 0;
     float pRandomElement = 0;
+    int dayCount;
+    public float dayTime = 40f;
+    float finishTimeBase = 40.0f;
+    public float finishTime = 40.0f;
     void Start()
     {
-        RandomEnemy();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!GameObject.FindGameObjectWithTag("Enemy"))
+        dayTime += Time.deltaTime;
+        if(dayTime >= finishTime)
         {
+            if (GameObject.FindGameObjectWithTag("Enemy"))
+            {
+                Destroy(GameObject.FindGameObjectWithTag("Enemy"));
+                GameObject.FindGameObjectWithTag("Menus").GetComponent<Menus>().ResetStrike();
+            }
+            dayCount++;
+            dayTime = 0f;
+            if (dayCount == 7)
+            {
+                dayCount = 0;
+            }
+            if (dayCount == 6)
+            {
+                finishTime = finishTimeBase * 2;
+            }
+            else
+            {
+                finishTime = finishTimeBase;
+            }
             taskManager.ClearTasks();
             RandomEnemy();
         }
+
 
     }
 

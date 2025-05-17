@@ -19,18 +19,24 @@ public class Enemy : MonoBehaviour
     public GameObject slime;
     public GameObject goblin;
     public GameObject skeleton;
+    float travelTime = 40.0f;
     Vector3 speed = new Vector3(-0.01f, 0, 0);
     void Start()
     {
         rTransform = GetComponent<RectTransform>();
         taskManager = GameObject.FindGameObjectWithTag("TaskManager").GetComponent<TaskManager>();
         menus = GameObject.FindGameObjectWithTag("Menus").GetComponent<Menus>();
+        travelTime = GameObject.FindGameObjectWithTag("Global").GetComponent<Global>().finishTime;
+        float n = 538 + 350;
+        float speedX = n / travelTime;
+        speed = new Vector3(-speedX, 0, 0);
+
     }
     
     // Update is called once per frame
     void Update()
     {
-        rTransform.position += speed;
+        rTransform.localPosition += speed * Time.deltaTime;
         if(transform.localPosition.x < -350)
         {
             Destroy(gameObject);
