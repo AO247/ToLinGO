@@ -25,6 +25,7 @@ public class Enemy : MonoBehaviour
     public GameObject goblin;
     public GameObject skeleton;
     public GameObject crown;
+    public GameObject textBar;
     float travelTime = 40.0f;
     Vector3 speed = new Vector3(-0.01f, 0, 0);
     float basic;
@@ -96,13 +97,18 @@ public class Enemy : MonoBehaviour
         health -= damage;
 
         HealthBarUI.SetHealth(health);
-
         if (health <= 0)
         {
             taskManager.ChangeToGold();
             Destroy(gameObject);
             menus.UpdateStrike();
         }
+        var textB = textBar.GetComponent<Text>();
+        if (textB != null)
+        {
+            textBar.GetComponent<Text>().text = health.ToString() + "/" + maxHealth.ToString();
+        }
+
         hitted = true;
         //Hit(vanishValue);
         //currentHit = true;

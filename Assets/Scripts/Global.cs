@@ -68,7 +68,7 @@ public class Global : MonoBehaviour
         pRandomElement = randomElement;
         GameObject newEnemy = Instantiate(enemyPrefab, Vector3.zero, Quaternion.identity);
         newEnemy.transform.SetParent(top.transform);
-        newEnemy.transform.localPosition = new Vector3(538, -512, 0);
+        newEnemy.transform.localPosition = new Vector3(538, -505, 0);
         Enemy enemy = newEnemy.GetComponent<Enemy>();
 
         GameObject activeEnemy = null;
