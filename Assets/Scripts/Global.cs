@@ -65,7 +65,6 @@ public class Global : MonoBehaviour
             activeEnemy = enemy.slime;
         }
 
-        // Wybór elementu i koloru
         Color elementColor = Color.white;
 
         if (randomElement == 0)

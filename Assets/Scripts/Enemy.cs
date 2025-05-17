@@ -10,10 +10,12 @@ public class Enemy : MonoBehaviour
         None
     }
 
+    public HealthBarUI HealthBarUI;
     Menus menus;
     public Element element;
     GameObject enemy;
     public int health = 4;
+    public int maxHealth = 4;
     RectTransform rTransform;
     TaskManager taskManager;
     public GameObject slime;
@@ -25,6 +27,7 @@ public class Enemy : MonoBehaviour
         rTransform = GetComponent<RectTransform>();
         taskManager = GameObject.FindGameObjectWithTag("TaskManager").GetComponent<TaskManager>();
         menus = GameObject.FindGameObjectWithTag("Menus").GetComponent<Menus>();
+        HealthBarUI.SetMaxHealth(maxHealth);
     }
     
     // Update is called once per frame
@@ -41,6 +44,9 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+
+        HealthBarUI.SetHealth(health);
+
         if (health <= 0)
         {
             taskManager.ChangeToGold();
