@@ -7,6 +7,9 @@ TagManager:
   - Enemy
   - Task
   - TaskManager
+  - Menus
+  - Hat
+  - Costume
   layers:
   - Default
   - TransparentFX
